@@ -105,7 +105,7 @@ function! go#fmt#update_file(source, target)
     let original_fperm = getfperm(a:target)
   endif
 
-  call rename(a:source, a:target)
+  silent! call rename(a:source, a:target)
 
   " restore file permissions
   if exists("*setfperm") && original_fperm != ''
